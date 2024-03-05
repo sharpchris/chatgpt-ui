@@ -119,18 +119,6 @@ const message_icon = selectMessageIcon(props.message)
           prepend-icon="content_copy"
       >
       </v-list-item>
-      <v-list-item
-          @click="editMessage()"
-          :title="$t('edit')"
-          prepend-icon="edit"
-      >
-      </v-list-item>
-      <v-list-item
-          @click="deleteMessage()"
-          :title="$t('delete')"
-          prepend-icon="delete"
-      >
-      </v-list-item>
     </v-list>
   </v-menu>
 
