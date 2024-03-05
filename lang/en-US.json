@@ -1,13 +1,13 @@
 {
   "signIn":"Sign In",
   "signUp":"Sign Up",
-  "username":"User Name (letters and numbers only)",
+  "username":"User Name",
   "password":"Password",
   "Username is required":"Username is required",
   "Password is required":"Password is required",
   "Create your account":"Create your account",
   "createAccount":"Create Account",
-  "email":"UF email address",
+  "email":"E-mail",
   "Sign in instead":"Sign in instead",
   "Please enter your username":"Please enter your username",
   "Username must be at least 4 characters":"Username must be at least 4 characters",
@@ -79,7 +79,7 @@
     "arxiv": "ArXiv code"
   },
   "welcomeScreen": {
-    "introduction1": "is an unofficial client for ChatGPT, but uses the official OpenAI API.",
+    "introduction1": "Select potential jurors using the menu on the left.",
     "introduction2": "You will need an OpenAI API Key before you can use this client.",
     "examples": {
       "title": "Examples",
