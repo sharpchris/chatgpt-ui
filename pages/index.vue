@@ -69,7 +69,6 @@ onActivated(async () => {
 
     <v-spacer></v-spacer>
 
-    <!---
     <v-btn
         :title="$t('newConversation')"
         icon="add"
@@ -83,7 +82,6 @@ onActivated(async () => {
     >
       {{ $t('newConversation') }}
     </v-btn>
-    -->
 
   </v-app-bar>
 

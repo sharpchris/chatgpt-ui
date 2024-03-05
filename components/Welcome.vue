@@ -5,13 +5,12 @@
         <div class="text-center">
           <h2 class="text-h2">{{ $t('welcomeTo') }} <span class="text-primary">{{ runtimeConfig.public.appName }}</span></h2>
           <p class="text-caption my-5">
-            {{ $t('welcomeScreen.introduction1') }}
+            {{ runtimeConfig.public.appName }} {{ $t('welcomeScreen.introduction1') }}
             <br>
           </p>
         </div>
       </v-col>
     </v-row>
-    <!---
     <v-row>
       <v-col cols="12" md="10" offset-md="1">
         <v-row>
@@ -60,7 +59,6 @@
         </v-row>
       </v-col>
     </v-row>
-    --->
   </v-container>
 </template>
 
