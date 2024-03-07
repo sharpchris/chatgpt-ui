@@ -286,19 +286,6 @@ const drawer = useDrawer()
                 v-bind="props"
             >
               <v-list-item-title>{{ (conversation.topic && conversation.topic !== '') ? conversation.topic : $t('defaultConversationTitle') }}</v-list-item-title>
-              <template v-slot:append>
-                <div
-                    v-show="isHovering && conversation.id"
-                >
-                  <v-btn
-                      icon="download"
-                      size="small"
-                      variant="text"
-                      @click.prevent="exportConversation(cIdx)"
-                  >
-                  </v-btn>
-                </div>
-              </template>
             </v-list-item>
           </v-hover>
         </template>
