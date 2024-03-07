@@ -104,11 +104,31 @@ const docDialogCtl = ref({
 })
 </script>
 
+<script>
+export default {
+  computed: {
+    notHome() {
+      return this.$route.path != "/";
+    }
+  },
+  watch: {
+     $route(to, from) {
+        if (this.$route.path != "/") {
+           this.notHome = true
+        } else {
+           this.notHome = false
+        }
+     }
+  }
+}
+</script>
+
 <template>
   <div
       class="flex-grow-1 d-flex align-center justify-space-between"
   >
     <v-textarea
+        v-show="notHome"
         ref="textArea"
         v-model="message"
         :label="$t(getLabel())"
@@ -125,6 +145,7 @@ const docDialogCtl = ref({
         @keydown.enter.exact="enterOnly"
     ></v-textarea>
     <v-btn
+        v-show="notHome"
         :disabled="loading"
         icon="send"
         title="Send"
@@ -133,6 +154,7 @@ const docDialogCtl = ref({
     ></v-btn>
   </div>
   <DocumentsManage
+    v-show="notHome"
     :send-message="sendMessage" 
     :control="docDialogCtl"
     ref="documentMan"
