@@ -90,13 +90,15 @@ const exportConversation = async (index) => {
   data.messages = []
   let messages = await loadMessage(conversation.id)
   for (let message of messages) {
-    let msg = {}
-    msg.role = message.is_bot ? "assistant" : "user"
-    msg.content = message.message
-    data.messages.push(msg)
+    if (message.is_hidden_from_user == 0) {
+      let msg = {}
+      msg.role = message.is_bot ? "potential juror" : "user"
+      msg.content = message.message
+      data.messages.push(msg)
+    }
   }
   let file_content = JSON.stringify(data)
-  let file_name = `${conversation.topic}_${new Date()}`.replace(/[\/\\:*?"<>]/g, "_")
+  let file_name = `${conversation.topic}_${new Date()}.txt`.replace(/[\/\\:*?"<>]/g, "_")
   const element = document.createElement('a');
   element.setAttribute(
     "href",
@@ -286,6 +288,19 @@ const drawer = useDrawer()
                 v-bind="props"
             >
               <v-list-item-title>{{ (conversation.topic && conversation.topic !== '') ? conversation.topic : $t('defaultConversationTitle') }}</v-list-item-title>
+                <template v-slot:append>
+                  <div
+                      v-show="isHovering && conversation.id"
+                  >
+                    <v-btn
+                        icon="download"
+                        size="small"
+                        variant="text"
+                        @click.prevent="exportConversation(cIdx)"
+                    >
+                    </v-btn>
+                  </div>
+                </template>
             </v-list-item>
           </v-hover>
         </template>
