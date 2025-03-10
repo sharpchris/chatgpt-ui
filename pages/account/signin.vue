@@ -106,7 +106,7 @@ const submit = async () => {
           errorMsg.value = error.value.data.non_field_errors[0]
         }
       } else {
-        errorMsg.value = 'Something went wrong. Please try again.'
+        errorMsg.value = 'Account Inactive or Incorrect Username/Password. If you are using an account made in a prior semester, please create a new account with a new username and alternative email.'
       }
     } else {
       setUser(data.value.user)
